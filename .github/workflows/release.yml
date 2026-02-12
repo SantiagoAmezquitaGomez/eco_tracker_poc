@@ -27,8 +27,8 @@ jobs:
       - name: Build Windows
         run: flutter build windows --release
 
-      - name: Check for executable
-        run: ls -R build/windows/runner/Release
+      - name: List contents of build/windows directory
+        run: ls -R build/windows
 
       - name: Crear Release y subir archivos
         uses: softprops/action-gh-release@v1
