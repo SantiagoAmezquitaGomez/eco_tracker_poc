@@ -23,15 +23,13 @@ jobs:
         run: flutter build apk --release
 
       - name: Build Windows
-        run: |
-          flutter config --enable-windows-desktop
-          flutter build windows --release
+        run: flutter build windows --release
 
       - name: Crear Release y subir archivos
         uses: softprops/action-gh-release@v1
         with:
           files: |
             build/app/outputs/flutter-apk/app-release.apk
-            build/windows/runner/Release/Prueba.exe
+            build/windows/runner/Release/myapp.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
